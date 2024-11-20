@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between; 
+}
+
+.navbar {
+    background: #1a1a1a;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    height: 210px;
+    position: absolute;
+    left: 20px; 
+    padding: 10px;
+    display: flex;
+    margin-bottom: -27px;
+    margin-left: -10px;
+}h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+canvas {
+    background-color: #222;
+    border: 2px solid #00FFFF;
+    margin: 20px 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: auto;
+}
+
+.pokemon .logo{
+    height: 70px;
+    position: center;
+    left: 20px; 
+    padding: 10px;
+    display: flex;
+    margin-bottom: -27px;
+    margin-left: -10px;
+    max-width: 25%;
+    max-height: 25%;
+    overflow: hidden;
+}
+.pokemon-input {
+    background-color: #333;
+    border: 2px solid #00FFFF;
+    color: #fff;
+    padding: 12px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+.pokemon-input::placeholder {
+    color: #ccc;
+}
+
+.pokemon-input:focus {
+    border-color: #00FFFF;
+    outline: none;
+}
+
+.pokemon-button {
+    background-color: #00FFFF;
+    border: none;
+    padding: 12px 30px;
+    color: #111;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+.pokemon-button:hover {
+    background-color: #fff;
+    color: #111;
+    transform: scale(1.1);
+}
+
+/* Styling for the Pokemon sprite image */
+.pokemon-sprite {
+    
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #00FFFF;
+    border-radius: 10px;
+    object-fit: contain;
+    display: flex; /* Initially hidden */
+    margin-left: 110px;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-left: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #bbb;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+}
+
+.container {
+    margin-top: 120px;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+section {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.container p{
+    padding: 10%;
+    text-align: center;
+}.pokemon .whos{
+    align-items: center;
+    padding: 5%;
+}
+</style>
+<body>
+    <nav class="navbar">
+        <img src="images/Logo.PNG" alt="Logo" class="logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="skills.html">Skills/Experience</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pokemon.html">Whos that Pokemon?</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+       <section id = "pokemon">
+        <h2>WHOS THAT POKEMON?</h2>
+       
+        <div id="pokemon-section">
+            <p>Unfamiliar with pokemon? Try inputting "Pikachu"</p>
+            
+            <input type="text" id="pokemonName" class="pokemon-input" placeholder="Enter Pokemon name">
+            <button onclick="fetchData()" class="pokemon-button">I Choose you</button><br>
+            
+            <img src="" alt="Pokemon Sprite" id="pokemonSprite" class="pokemon-sprite" style="display: none">
+        </div>
+       </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Dayquon Kelley. All rights reserved.</p>
+        <audio autoplay loop>
+            <source src="Music/Pokemon song.mp3" type="audio/mpeg"> 
+               
+        </audio>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
